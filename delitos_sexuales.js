@@ -98,6 +98,7 @@ d3.csv("data/delitos.csv")
       .attr("cx", function(r) { return x(new Date(r.key).getDate()); })
       .attr("cy", function(r) { return y(new Date(r.key).getMonth() + 1); })
       .style("fill", function(r) {return d3.interpolatePurples(scale(r.values.length))})
+      // .style("fill", function(r) {return d3.interpolateGreys(-(scale(r.values.length)-1))})
 
       //Tooltips
       .on("mouseover", function(d) {
