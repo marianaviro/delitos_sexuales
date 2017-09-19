@@ -31,7 +31,12 @@ p{
 
 footer{
   text-align: center;
+  padding-top: 15px;
+}
 
+#divide{
+  height: 50px;
+  background-color: #7362ac;
 }
 
 #description p{
@@ -41,7 +46,11 @@ footer{
 
 #description{
   margin-top: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 150px;
+}
+
+#header{
+  height: 200px;
 }
 
 #title{

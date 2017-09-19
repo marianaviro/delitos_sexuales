@@ -15,6 +15,7 @@ var xAxis = d3.axisBottom(x)
 var yAxis = d3.axisLeft(y)
 
 var svg = d3.select("body").append("svg")
+    .attr("id", "graph")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
