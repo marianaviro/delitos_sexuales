@@ -20,7 +20,7 @@ var svg = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("delitos.csv")
+d3.csv("data/delitos.csv")
   .row(
     function(r) {
       return {
