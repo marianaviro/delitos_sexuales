@@ -94,22 +94,32 @@ d3.csv("data/delitos.csv")
       .data(data)
       .enter().append("circle")
       .attr("class", "dot")
-      .attr("r", function(r) { return x(r.values.length) * 0.0027; })
+      .attr("r", function(r) { return x(r.values.length) * 0.0025; })
       .attr("cx", function(r) { return x(new Date(r.key).getDate()); })
       .attr("cy", function(r) { return y(new Date(r.key).getMonth() + 1); })
       .style("fill", function(r) {return d3.interpolatePurples(scale(r.values.length))})
       // .style("fill", function(r) {return d3.interpolateGreys(-(scale(r.values.length)-1))})
 
-      //Tooltips
-      .on("mouseover", function(d) {
-       div.transition()
-         .duration(200)
+      //Mouse events
+      .on("mouseover", function(d, i) {
+        d3.selectAll(".dot")
+          .transition()
+          .duration(200)
+          .attr("opacity", function(r, j){
+            return j !== i ? 0.3 : 1;
+          })
+        div.transition()
+          .duration(200)
          .style("opacity", .9);
        div.html(formatDate(new Date(d.key)) + "<br/><p>" + d.values.length + " crimes</p>")
-         .style("left", (d3.event.pageX + 10) + "px")
+         .style("left", (d3.event.pageX + 20) + "px")
          .style("top", (d3.event.pageY - 30) + "px");
        })
      .on("mouseout", function(d) {
+       d3.selectAll(".dot")
+         .transition()
+         .duration(200)
+         .attr("opacity", 1);
        div.transition()
          .duration(500)
          .style("opacity", 0);

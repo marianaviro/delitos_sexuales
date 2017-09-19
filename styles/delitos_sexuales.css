@@ -25,7 +25,24 @@ h1{
   /*color: #212121*/
 }
 
+p{
+  color: #7f7f7f;
+}
 
+footer{
+  text-align: center;
+
+}
+
+#description p{
+  text-align: center;
+  color: #4F4F4F;
+}
+
+#description{
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
 
 #title{
   /*background-color: #3f007d;*/
@@ -71,7 +88,7 @@ g .tick line{
 }
 
 .dot {
-  stroke: none;
+  /*stroke: none;*/
 /*  fill: #6534F6;*/
 }
 
