@@ -21,6 +21,9 @@ var svg = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+/*--Felipe Campos--*/
+/*--Deberías borrar el data2.csv ya que no se usa--*/
+
 d3.csv("data/delitos.csv")
   .row(
     function(r) {
@@ -128,7 +131,8 @@ d3.csv("data/delitos.csv")
 
     }
   )
-
+/*--Felipe Campos--*/
+/*--Hay un pequeño error en las fechas, estás descuadrada 1 dia Ej: 1 de Feb del 2016 fue un Lunes, No un martes--*/
 function formatDate(date) {
   var monthNames = [
     "Jan", "Feb", "Mar",
@@ -146,4 +150,5 @@ function formatDate(date) {
   var year = date.getFullYear();
 
   return dayNames[dayN] + ' ' + monthNames[monthIndex] + ' ' + day + ', ' + year;
+    /*-- return dayNames[dayN-1]+' '+monthNames[monthIndex] + ' ' + day + ', ' + year;--*/
 }
